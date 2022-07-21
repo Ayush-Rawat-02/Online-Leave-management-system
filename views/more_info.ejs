@@ -1,0 +1,31 @@
+<%- include('./partials/header') %>
+<div style="background-color: rgba(54, 136, 120, 0.61);">
+    <form action="/users/<%=user.id%>/leaves/<%=student.id%>/more_info" method="post">
+        <div style="text-align: center;">
+            <h1 style="font-family: monospace;"><%= student.name %></h1>
+            <hr>
+            <div>
+                <img src="" alt="User Image">
+            </div>
+            <% student.leaves.forEach((leave)=>{ %>
+                <div>
+                    <h4 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Subject : <%= leave.subject %></h4>
+                    <h4 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">From : <%= moment(leave.from).format('DD/MM/YY') %></h4>
+                    <h4 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">To : <%= moment(leave.to).format('DD/MM/YY') %></h4>
+                    <h4 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Days : <%= leave.days %></h4>
+
+                    <div>
+                        <input class="btn btn-dark mb-4" type="submit" name="action" id="" value="Approve">
+                        <input class="btn btn-dark mb-4" type="submit" name="action" id="" value="Deny">
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </form>
+</div>
+<div>
+    <a href="/dashboard">back</a>
+</div>
+<div>
+    <%- include('./partials/footer') %>
+</div>

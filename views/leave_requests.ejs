@@ -1,0 +1,41 @@
+<%- include('./partials/header') %>
+<div>
+    <%- include('./hod_functions') %>
+</div>
+<div>
+    <table class="table">
+        <tr class="table-dark">
+            <th>Student name</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Days</th>
+            <th>Status</th>
+        </tr>
+        <% students.forEach(function(stud){ %>
+            <% if(stud.leaves.length>0){ %>
+                <% stud.leaves.forEach(function(leave){ %>
+                    <tr class="table-info">
+                        <td><%=leave.user.username%></td>
+                        <td><%= moment(leave.from).format('DD/MM/YY') %></td>
+                        <td><%= moment(leave.to).format('DD/MM/YY') %></td>
+                        <td><%=leave.days %></td>
+                        <td>
+                            <% if(leave.status!="pending"){ %>
+                                <%= leave.status %>
+                            <% } %>
+                            <% if(leave.status=="pending"){ %>
+                                <a href="/users/<%=user.id%>/leaves/<%=stud.id%>/more_info" class="btn btn-dark">
+                                    Pending
+                                </a>
+                            <% } %>
+                        </td>
+                    </tr>
+                <% }) %>
+            <% } %>
+        <% }) %>
+    </table>
+</div>
+<div>
+    <a href="/dashboard">back</a>
+</div>
+<%- include('./partials/footer') %>

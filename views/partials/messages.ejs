@@ -1,0 +1,34 @@
+<!--Messages while regstration-->
+<% if(typeof errors!='undefined'){ %>
+    <% errors.forEach(function(error){ %>                
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong><%= error.msg %></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% }); %>
+<% } %>
+
+<!--Displaying flash message after registration/for login page-->
+<% if(success_msg!=''){ %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong><%= success_msg %></strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<% if(error_msg!=''){ %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong><%= error_msg %></strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<!--For passport error flash message when user is not found(again dismissable bootstrap required) as well as other 
+error handling messages-->
+<% if(error!=''){ %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong><%= error %></strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+

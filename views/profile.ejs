@@ -1,0 +1,23 @@
+<%- include('./partials/header') %>
+<% if(user.user_type=='Student'){ %>
+    <%- include('./stud_functions') %>
+<% } %>
+<% if(user.user_type=='HOD'){ %>
+    <%- include('./hod_functions') %>
+<% } %>
+<div class="wrapprer" style="text-align: center; background-color: rgba(138, 181, 204, 0.753);">
+    <div>
+        <div><img src="<%= user.image %>" alt="User Image"></div>
+        <hr>
+        <h2 style="font-family: monospace;"><strong>Name : <%= user.name %></strong></h1>
+        <h3 style="font-family: monospace;"><strong>Type : <%= user.user_type %></strong></h1>
+        <h6 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Email : <%= user.email %></h4>    
+        <h6 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Department : <%= user.department %></h4>
+    </div>
+        <a href="/users/<%=user._id%>/edit">Edit</a>
+</div>
+<hr>
+<div>
+    <a href="/dashboard">back</a>
+</div>
+<%- include('./partials/footer') %>

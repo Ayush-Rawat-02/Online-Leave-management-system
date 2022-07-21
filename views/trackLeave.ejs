@@ -1,0 +1,28 @@
+<%- include('./partials/header') %>
+<div>
+    <%- include('./stud_functions') %>
+</div>
+<div>
+    <h4 style="text-align: center ;font-family: monospace;background-color: rgba(16, 114, 89, 0.623); margin:0">Leaves</h4>
+    <table class="table">
+        <tr class="table-dark">
+            <th>Subject</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Days</th>
+            <th>Status</th>
+        </tr>
+        <% user.leaves.forEach(function(leave){ %>
+            <tr class="table-info">
+                <td><%= leave.subject %></td>
+                <td><%= moment(leave.from).format('DD/MM/YY') %></td>
+                <td><%= moment(leave.to).format('DD/MM/YY') %></td>
+                <td><%= leave.days %></td>
+                <td><%= leave.status %></td>
+            </tr>
+        <% }) %>
+    </table>
+</div>
+    <a href="/dashboard">back</a>
+</div>
+<%- include('./partials/footer') %>

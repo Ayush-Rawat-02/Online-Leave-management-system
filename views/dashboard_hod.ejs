@@ -1,0 +1,15 @@
+<%- include('./partials/header') %>
+<div>
+    <%- include('./hod_functions') %>
+</div>
+<div style="margin:0; background-color: rgb(10, 15, 29);">
+    <h1 style="font-family: monospace;"><strong><%= user.name %></strong></h1>
+    <h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><strong><%= user.user_type %></strong></h3>
+</div>
+<div style="margin:0; text-align: center;background-color: rgba(9, 13, 27, 0.801);">
+    <h3 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Username : <%= user.name %></h3>
+    <h3 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Email : <%= user.email %></h3>
+    <h3 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Department : <%= user.department %></h3>
+</div>
+</div>
+<%- include('./partials/footer') %>

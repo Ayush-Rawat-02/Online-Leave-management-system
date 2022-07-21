@@ -1,0 +1,19 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+.card{
+    display: inline-block;
+    margin: 2rem 1rem;
+}
+.effect.hover{
+    margin: 0;
+    width: 11rem;
+    }

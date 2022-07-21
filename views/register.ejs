@@ -1,0 +1,53 @@
+<style>
+    body{
+        background-color: rgba(206, 177, 115, 0.596);
+        background-image: url('https://freeforcommercialuse.net/wp-content/uploads/2021/03/msp_2102_7467.jpg');
+    }
+</style>
+<div style="text-align: center;
+margin: 1% 30%;
+padding: 2% 4%;
+color: hsla(0, 0%, 0%, 0.932);
+border: solid black 1px;
+background-color: rgba(112, 118, 124, 0.53);">
+    <h1><strong>Register yourself</strong></h1>
+    <hr>
+    <div>
+        <%- include('partials/messages') %>                <!--we use dismissable messages from bootstrap for better functioning and look-->
+        <form action="/users/register" method="post">
+            <div>
+                <div><select class="form-select mb-4" name="user_type" id="user_type">
+                    <option selected><h4 style="color: gray;">----select user type----</h4></option>
+                    <option value="Student">Student</option>
+                    <option value="HOD">HOD</option>
+                </select></div>
+                <div class="form-floating mb-4">
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Name" value="<%= typeof name !='undefined'? name : '' %>">
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input class="form-control" type="email" name="email" id="email" placeholder="Email id" value="<%= typeof email !='undefined'? email : '' %>">
+                    <label for="email">Email Id</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input class="form-control" type="text" name="department" id="department" placeholder="Department" value="<%=typeof department!='undefined'?department : '' %>">
+                    <label for="department">Department</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Password" value="<%= typeof email !='undefined'? password : '' %>">
+                    <label for="password">Password(minimum 6 characters required)</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input class="form-control" type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" value="<%= typeof email !='undefined'? cpassword : '' %>">
+                    <label for="cpassword">Confirm Password</label>
+                </div>
+                <button class="btn btn-dark" style="width: 100%;" type="submit">Register</button>
+            </div>
+        </form>
+        <hr>
+        <p style="color: black;">Have an account ?  <a style="color: rgb(6, 25, 32);" href="/users/login">Login</a></p>
+        <div>
+            <a class="btn btn-dark" style="padding: 2px 5px;" href="/">back</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<!--<div>
+    <div>
+        <a href="/dashboard">Home</a>
+    </div>
+    <div>
+        <a href="/users/<%=user._id%>/profile">Profile</a>
+    </div>
+    <div>
+        <a href="/users/<%= user._id%>/Leaves">Leaves</a>
+    </div>
+</div>-->
+<ul class="nav nav-tabs" style="    font-family: inherit;">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/users/<%=user._id%>/profile">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/users/<%=user._id%>/Leaves">Leaves</a>
+    </li>
+  </ul>
+  <%- include('partials/messages') %>

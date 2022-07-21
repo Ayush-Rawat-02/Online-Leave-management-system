@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+<div style="text-align: center;padding: 0 10rem; background-color: rgba(53, 148, 148, 0.644);">
+    <form action="/users/<%=user._id%>/edit" method="post">
+        <div><h1 style="font-family: monospace;">Edit</h1></div>
+        <hr>
+
+        <div class="form-floating mb-4">
+            <input name="name" type="text" id="name" class="form-control" value="<%= typeof name !='undefined'? name : '' %>">
+            <label for="name">Name : </label>
+        </div>
+        <div class="form-floating mb-4">
+            <input name="email" type="email" id="email" class="form-control" value="<%= typeof email !='undefined'? email : '' %>">
+            <label for="email">Email : </label>
+        </div>
+        <div class="form-floating mb-4">
+            <input name="department" type="text" id="department" class="form-control" value="<%= typeof department !='undefined'? department : '' %>">
+            <label for="department">Department</label>
+        </div>
+        <div class="form-floating mb-4">
+            <input name="url" type="text" name="img" id="img" class="form-control" value="<%= typeof url !='undefined'? url : '' %>">
+            <label for="image">Image url : </label>
+        </div>
+        <button class="btn btn-dark" type="reset">Clear</button>
+        <button class="btn btn-dark" type="submit">Save</button>
+    </form>
+</div>
+<div>
+    <a href="/dashboard">back</a>
+</div>
+<%- include('./partials/footer') %>

@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+<div>
+    <%- include('./stud_functions') %>
+</div>
+<div class="img-fluid" style="background-color: rgb(152, 175, 204);">
+    <div style="    text-align: center;
+    margin: 0 30%;
+    padding: 2% 4%;
+    color: hsl(0deg 0% 6% / 93%);
+    border: solid white 1px;
+    background-color: rgb(180 183 187 / 53%)">
+        <h1 style="font-weight: bold;font-family: monospace;"><%=user.name%></h1>
+        <h3>Apply for leave</h1>
+        <%- include('partials/messages') %>
+        <div>
+            <form action="/users/<%=user._id%>/apply" method="post">
+                <div class="form-floating mb-4">
+                    <input style="height:5rem;"
+                    type="text" name="subject" id="subject" class="form-control size-5" placeholder="Subject">
+                    <label for="subject">Subject</label>
+                </div>
+                <div>
+                    <label for="from">From : </label>
+                    <input class="form-control mb-4" 
+                    style="border-radius: 4px; width: 50%; position: relative;left: 25%;" 
+                    type="date" 
+                    name="from" id="from">
+                </div>
+                <div>
+                    <label for="to">To :</label>
+                    <input class="form-control mb-4" 
+                    style="border-radius: 4px; width: 50%; position: relative;left: 25%;;" 
+                    type="date" 
+                    name="to" id="to">
+                </div>
+                <button class="btn btn-dark" type="reset">Clear</button>
+                <button class="btn btn-dark" type="submit">Apply</button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a href="/dashboard">back</a>
+    </div>
+</div>
+<%- include('./partials/footer') %>

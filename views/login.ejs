@@ -1,0 +1,33 @@
+<style>
+    body{
+        background-color: rgba(206, 177, 115, 0.596);
+        background-image: url(https://freeforcommercialuse.net/wp-content/uploads/2021/03/msp_2011_5547.jpg);
+    }
+</style>
+<div style="text-align: center;
+margin: 5% 30%;
+padding: 2% 4%;
+color: hsla(0, 0%, 0%, 0.932);
+border: solid black 1px;
+background-color: rgba(115, 125, 134, 0.53);">
+    <h1><strong>Login here</strong></h1>
+    <hr>
+    <%- include('partials/messages') %>
+    <form action="/users/login" method="post">
+        <div>
+            <div class="form-floating mb-4">
+                <input class="form-control" type="email" name="email" id="email" placeholder="Enter email id">
+                <label for="email">Email</label>
+            </div>
+            <div class="form-floating mb-4">
+                <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+                <label for="password">Password</label>
+            </div>
+            <button class="btn btn-dark" style="width: 100%;" type="submit">Login</button>
+        </div>
+    </form>
+    <p style="margin: 1em;">Not yet registred ?  <a style="color: rgb(20, 21, 27);" href="/users/register">Register here</a></p>
+    <div>
+        <a class="btn btn-dark" style="padding: 2px 5px;" href="/">back</a>
+    </div>
+</div>
